@@ -1,0 +1,121 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+    z-index: 1100; /* Ensure the menu is above the overlay */
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1101; /* Ensure the button is above the overlay */
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    left: -200px;
+    top: 0;
+    background-color: #fff;
+    width: 200px;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu.open .dropdown-content {
+    left: 0;
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 200px; /* Start after the menu area */
+    width: calc(100% - 200px); /* Cover the screen, excluding the menu area */
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100; /* Make sure the overlay is under the menu button */
+}
+
+.menu.open + .overlay {
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5rem 1rem 1rem;
+    margin-top: 60px;
+}
+
+.photo {
+    margin: 1rem;
+    text-align: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.photo:hover {
+    transform: scale(1.05);
+}
+
+.photo img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.download-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #555;
+}
